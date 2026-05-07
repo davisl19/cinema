@@ -1,0 +1,21 @@
+@startuml
+
+actor Espectador
+
+participant "FilmeView" as View
+participant "FilmeController" as Controller
+participant "FilmeServico" as Service
+participant "FilmeRepositorio" as Repository
+database "Banco de Dados" as DB
+
+Espectador -> View : Solicita filmes em cartaz
+View -> Controller : consultarFilmes()
+Controller -> Service : buscarFilmes()
+Service -> Repository : listarFilmes()
+Repository -> DB : SELECT Filmes
+DB --> Repository : dados dos filmes
+Repository --> Service : lista de filmes
+Service --> Controller : retorno dos filmes
+Controller --> View : exibir resultados
+
+@enduml

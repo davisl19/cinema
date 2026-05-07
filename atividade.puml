@@ -1,0 +1,11 @@
+@startuml
+
+start
+
+:Pesquisar filme;
+:Visualizar informações;
+:Consultar sessões disponíveis;
+
+stop
+
+@enduml

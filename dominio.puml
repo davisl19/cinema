@@ -1,0 +1,40 @@
+@startuml
+
+class Cinema {
+    idCinema
+    nome
+    cidade
+    estado
+    endereco
+    capacidade
+}
+
+class Filme {
+    idFilme
+    titulo
+    duracao
+    genero
+    classificacaoIndicativa
+    diretor
+}
+
+class Sessao {
+    idSessao
+    data
+    horarioInicio
+    horarioFim
+    publico
+    sala
+}
+
+class Espectador {
+    idEspectador
+    nome
+}
+
+Cinema -- Sessao
+Filme -- Sessao
+Cinema -- Filme : exibe
+Espectador -- Sessao : assiste
+
+@enduml
